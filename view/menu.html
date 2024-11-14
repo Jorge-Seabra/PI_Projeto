@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tela de Menu</title> 
+<link rel="stylesheet" href="css/telamenu.css">
+
+</head>
+<body>
+</head>
+<body>
+<div class="menu" id="myMenu">
+  <a href="#" class="active">Home</a>
+  <a href="#">Produtos</a>
+  <a href="#">Serviços</a>
+  <a href="#">Sobre</a>
+  <a href="#">Contato</a>
+  <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+    &#9776;
+  </a>
+</div>
+<div class="footer">
+  <p>&copy; 2024 Projeto de Caminhão. Todos os direitos reservados.</p>
+</div>
+</body>
+
+<script>
+  function toggleMenu() {
+    var x = document.getElementById("myMenu");
+    if (x.className === "menu") {
+      x.className += " responsive";
+    } else {
+      x.className = "menu";
+    }
+  }
+</script>  
+</html>

@@ -1,0 +1,43 @@
+create database CargaFrete;
+
+use CargaFrete;
+
+create table Motorista(
+     id_motorista integer auto_increment primary key,
+     NOME varchar (255) not null,
+     CNH varchar (10) not null,
+     telefone varchar (255) not null,
+     Endereco varchar(15) not null
+   
+);
+
+create table Caminhao(
+     id_caminhao integer auto_increment primary key,
+     Modelo varchar (255) not null,
+     Placa varchar (10) not null,
+     Capacidade_Carga varchar (15) not null
+);
+ 
+ create table Cliente(
+      id_cliente integer auto_increment,
+      Nome varchar (255) not null,
+      CNPJ varchar (10) not null,
+      Telefone varchar (10) not null,
+      Endereço varchar (15) not null,
+      primary key (id_Cliente)
+);
+
+create table CargaFrete(
+     id_frete integer auto_increment primary key,
+     Origem varchar(255) not null,
+     Destino varchar (10) not null,
+     Saida varchar (15) not null,
+     Chegada varchar (10) not null,
+     valor varchar (15) not null,
+     motorista integer,
+     caminhao integer,
+     cliente integer,
+     foreign key (motorista) references Motorista(id_caminhao),
+     foreign key (caminhao) references Caminhao(id_caminhao),
+     foreign key (cliente) references Cliente(id_cliente)
+);
